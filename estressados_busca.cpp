@@ -4,20 +4,20 @@ using namespace std;
 
 bool existe(vector<int> fila, int x){
     int i = 0, a = 0; 
-    while(fila[i] != '\0'){
-        if(x == fila[i]){
+    while (fila[i] != '\0'){
+        if (x == fila[i]){
             a = 1;
             return true;
         }
         i++;
     }
-    if(a == 0) return false;
+    if (a == 0) return false;
 }
 
 int contar(vector<int> fila, int x){
     int i = 0, soma = 0;
-    while(fila[i] != '\0'){
-        if(x == fila[i]) soma++;
+    while (fila[i] != '\0'){
+        if (x == fila[i]) soma++;
         i++;
     }
     return soma;
@@ -25,8 +25,8 @@ int contar(vector<int> fila, int x){
 
 int procurar_valor(vector<int> fila, int x){
     int i = 0;
-    while(fila[i] != '\0'){
-        if(x == fila[i]){
+    while (fila[i] != '\0'){
+        if (x == fila[i]){
             break;
         }
         i++;
@@ -37,8 +37,8 @@ int procurar_valor(vector<int> fila, int x){
 
 int procurar_valor_apartir(vector<int> fila, int x, int inicio){
     int i = inicio;
-    while(fila[i] != '\0'){
-        if(x == fila[i]){
+    while (fila[i] != '\0'){
+        if (x == fila[i]){
             break;
         }
         i++;
@@ -71,7 +71,7 @@ int main() {
     cin >> ref;
     
     if (n == 1) {
-        if(existe(fila, ref)) cout << "Existe";
+        if (existe(fila, ref)) cout << "Existe";
         else cout << "Não Existe";
     }if (n == 2) {
         cout << contar(fila, ref) << endl;

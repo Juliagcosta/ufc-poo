@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <string>
 using namespace std;
 
 float calcular_stress_medio(vector<int> fila){

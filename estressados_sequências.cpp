@@ -2,7 +2,6 @@
 #include <vector>
 using namespace std;
 
-//Duas ou mais pessoas do mesmo sexo seguidas podem formar um time. Quantos times existem na fila?
 int quantos_times(vector<int> fila){
     int i = 0, j = 1, soma = 0, times = 0;
     
@@ -45,7 +44,6 @@ int quantos_times(vector<int> fila){
     return times;
 }
 
-//Qual o maior time que apareceu na fila?
 vector<int> maior_time(vector<int> fila){
     int i = 0, j = 1, soma = 0, times = 0;
     
@@ -102,7 +100,7 @@ vector<int> maior_time(vector<int> fila){
                     soma++;
                 }
                 else {
-                    if(soma >= 1){
+                    if (soma >= 1){
                         x++;
                     }
                     i = j - 1;
@@ -118,7 +116,7 @@ vector<int> maior_time(vector<int> fila){
                     soma++;
                 }
                 else {
-                    if(soma >= 1){
+                    if (soma >= 1){
                         x++;
                     }
                     i = j - 1;
@@ -135,7 +133,7 @@ vector<int> maior_time(vector<int> fila){
     int maior = t_times[0];
     i = 0;
     while (i != 5){
-        if(t_times[i] > maior){
+        if (t_times[i] > maior){
             maior = t_times[i];
         }
         i++;
@@ -150,7 +148,7 @@ vector<int> maior_time(vector<int> fila){
                     soma++;
                 }
                 else {
-                    if(soma == maior){
+                    if (soma == maior){
                         marca = i;
                     }
                     i = j - 1;
@@ -165,7 +163,7 @@ vector<int> maior_time(vector<int> fila){
                     soma++;
                 }
                 else {
-                    if(soma == maior){
+                    if (soma == maior){
                         marca = i;
                     }
                     i = j - 1;
@@ -196,7 +194,6 @@ vector<int> maior_time(vector<int> fila){
     return aux;
 }
 
-//Quantas pessoas não estavam em um time?
 vector<int> sozinhos(vector<int> fila, int t){
     int i = 0, j = 1, soma = 1, soma1 = 0;
     
@@ -253,7 +250,7 @@ vector<int> sozinhos(vector<int> fila, int t){
                     soma++;
                 }
                 else {
-                    if(soma == 0){
+                    if (soma == 0){
                         aux[x] = fila[i];
                         x++;
                     }
@@ -269,7 +266,7 @@ vector<int> sozinhos(vector<int> fila, int t){
                     soma++;
                 }
                 else {
-                    if(soma == 0){
+                    if (soma == 0){
                         aux[x] = fila[i];
                         x++;
                     }

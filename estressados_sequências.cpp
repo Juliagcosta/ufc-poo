@@ -99,9 +99,12 @@ vector<int> maior_time(vector<int> fila){
             while (fila[j] != '\0'){
                 if (fila[j] > 0){
                     t_times[x]++;
-                    x++;
+                    soma++;
                 }
                 else {
+                    if(soma >= 1){
+                        x++;
+                    }
                     i = j - 1;
                     break;
                 }
@@ -112,9 +115,12 @@ vector<int> maior_time(vector<int> fila){
             while (fila[j] != '\0'){
                 if (fila[j] < 0){
                     t_times[x]++;
-                    x++;
+                    soma++;
                 }
                 else {
+                    if(soma >= 1){
+                        x++;
+                    }
                     i = j - 1;
                     break;
                 }
@@ -128,14 +134,15 @@ vector<int> maior_time(vector<int> fila){
     
     int maior = t_times[0];
     i = 0;
-    while (t_times[i] != '\0'){
+    while (i != 5){
         if(t_times[i] > maior){
             maior = t_times[i];
         }
+        i++;
     }
     
     int marca;
-    i = 0, j = 1, soma = 0;
+    i = 0, j = 1, soma = 1;
     while (fila[i] != '\0'){
         if (fila[i] > 0){
             while (fila[j] != '\0'){
@@ -167,7 +174,7 @@ vector<int> maior_time(vector<int> fila){
                 j++;
             }
         }
-        soma = 0;
+        soma = 1;
         j++;
         i++;
     }
@@ -178,8 +185,12 @@ vector<int> maior_time(vector<int> fila){
         aux.push_back(i);
     }
     
-    for (i = marca; i < marca+maior; i++){
-        aux[i] = fila[i];
+    int limite = marca + maior;
+    int p = 0;
+    
+    for (i = marca; i < limite; i++){
+        aux[p] = fila[i];
+        p++;
     }
     
     return aux;

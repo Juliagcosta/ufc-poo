@@ -27,7 +27,7 @@ int trios(vector<int> fila){
     while (fila[i] != '\0'){
         while (fila[j] != '\0'){
             if ((fila[i] == (-1)*fila[j]) || (fila[i] == fila[j]) && soma != 2 && i != j){
-                if(soma == 1){
+                if (soma == 1){
                     s_casais++;
                 }
                 soma++;

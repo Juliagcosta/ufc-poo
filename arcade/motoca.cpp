@@ -93,6 +93,12 @@ int main() {
     
     int np;
     std::cin >> np;
+    
+    if (np == 0) {
+        std::cout << "Digite uma potência maior que zero.\n";
+        std::cin >> np;
+    }
+    
     Moto moto {np};
     
     std::cout << "Nossa motoca tem a potência " << np << ".\n ----------------------------------\n";

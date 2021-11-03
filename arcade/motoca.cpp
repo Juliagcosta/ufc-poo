@@ -29,7 +29,6 @@ struct Moto {
         this->pessoa = pessoa;
         
         if(pessoa->idade <= 10) {
-            std::cout << "\n" <<pessoa->nome << " sobe.\n";
             this->pessoa = pessoa;
             this->alguem = true;
         }    
@@ -40,7 +39,6 @@ struct Moto {
         
         if (alguem) {
             this->alguem = false;
-            std::cout << "\n" <<pessoa->nome << " desce.\n";
         }
     }
     

@@ -24,6 +24,7 @@ struct PulaPula {
     int custo = 0;
     int caixa = 0;
     int i = 0;
+    int skip = -4;
     
     PulaPula(float custo) {
         this->custo = custo;
@@ -84,15 +85,30 @@ struct PulaPula {
         this->inicio = final;
     }
     
+    void papaichegou(Crianca *crianca) {
+        this->crianca = crianca;
+        
+        for (i = 0; i < posicao; i++){
+            if (crianca->nome == fila[i]) {
+                this->skip = i;
+                cout << "O pai de " << crianca->nome << " chegou. " << crianca->nome << " foi embora.\n";
+            }
+        }
+    }
+    
     void show() {
         cout << "vvv-------------------vvv\n";
         cout << "[ ";
         for (i = inicio; i < final; i++) {
-            cout << fila[i];
+            if (i < this->skip || i >= this->skip+4) {
+                cout << fila[i];
+            }
         }
         cout << "] <= ";
         for (i = final; i < posicao; i++) {
-            cout << fila[i];
+            if (i < this->skip || i >= this->skip+4) {
+                cout << fila[i];
+            }
         }
         cout << "<=.\n";
         cout << "Caixa: " << this->caixa << endl;
@@ -138,6 +154,9 @@ int main() {
     p.entra(&amanda);
     p.entra(&alice);
     p.entra(&yasmin);
+    p.show();
+    p.papaichegou(&amanda);
+    p.show();
     
     return 1;
 }

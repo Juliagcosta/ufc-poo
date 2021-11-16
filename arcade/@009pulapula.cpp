@@ -88,7 +88,7 @@ struct PulaPula {
     void papaichegou(Crianca *crianca) {
         this->crianca = crianca;
         
-        for (i = 0; i < posicao; i++){
+        for (i = final; i < posicao; i++){
             if (crianca->nome == fila[i]) {
                 this->skip = i;
                 cout << "O pai de " << crianca->nome << " chegou. " << crianca->nome << " foi embora.\n";
